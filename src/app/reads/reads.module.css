@@ -1,0 +1,257 @@
+/* Inherit layout basics if needed, or define specific ones */
+.content {
+    line-height: 1.3;
+    flex-grow: 1;
+    font-size: 13px;
+}
+
+.projectItem {
+    padding: 4px 8px;
+    /* Slightly more padding for read items */
+    margin: 4px 0;
+    background: #ffffff;
+    border: 1px solid #c0c0c0;
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+}
+
+/* Dark theme project item */
+:global(.dark-theme) .projectItem {
+    background: #2a2a2a;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+.projectLink {
+    display: block;
+    font-size: 13px;
+    color: #0000ff;
+    text-decoration: none;
+    /* Cleaner look */
+}
+
+.projectLink:visited {
+    color: #800080;
+}
+
+.projectLink:hover {
+    text-decoration: underline;
+}
+
+/* Dark theme project link */
+:global(.dark-theme) .projectLink {
+    color: #66ccff;
+}
+
+:global(.dark-theme) .projectLink:visited {
+    color: #cc99ff;
+}
+
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    /* Dimmed background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalWindow {
+    background: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dark theme modal window */
+:global(.dark-theme) .modalWindow {
+    background: #c0c0c0;
+    /* Keep modal light gray even in dark mode for contrast? Or dark gray? */
+    /* Let's go with classic Mac gray for the window frame regardless of theme, or adapt */
+    background: #dddddd;
+    color: black;
+}
+
+.modalHeader {
+    background: #c0c0c0;
+    border-bottom: 1px solid #000000;
+    padding: 6px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+}
+
+.modalTitle {
+    font-weight: bold;
+    font-size: 13px;
+    background: #c0c0c0;
+    padding: 0 4px;
+}
+
+.closeButton {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #000000;
+    background: #ffffff;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 1;
+    box-shadow: 1px 1px 0 #000;
+}
+
+.closeButton:active {
+    background: #000000;
+    color: #ffffff;
+    box-shadow: inset 1px 1px 0 #fff;
+}
+
+.modalBody {
+    padding: 16px;
+    background: #ffffff;
+    /* Inner content white */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modalInput {
+    width: 100%;
+    padding: 6px;
+    font-family: inherit;
+    font-size: 13px;
+    border: 1px solid #808080;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    background: #fff;
+}
+
+.modalButton {
+    padding: 6px 12px;
+    font-family: inherit;
+    font-size: 13px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 2px 2px 0 #000000;
+    cursor: pointer;
+    align-self: flex-end;
+    /* Align right */
+}
+
+.modalButton:active {
+    box-shadow: none;
+    transform: translate(2px, 2px);
+    background: #cccccc;
+}
+
+.modalButton:disabled {
+    background: #eeeeee;
+    color: #888888;
+    border-color: #888888;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Admin Lock Button */
+.adminParams {
+    margin-top: 20px;
+    /* Add space above it since it's now at the bottom */
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    align-items: center;
+}
+
+.adminButton {
+    background: #ffffff;
+    border: 1px solid #000000;
+    padding: 2px 6px;
+    /* Smaller padding */
+    cursor: pointer;
+    font-size: 11px;
+    /* Smaller text */
+    font-family: inherit;
+    color: #000000;
+    box-shadow: 2px 2px 0 #000000;
+    transition: all 0.1s ease;
+    opacity: 1;
+}
+
+.adminButton:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+    background: #cccccc;
+}
+
+.adminButton:hover {
+    background: #eeeeee;
+}
+
+.deleteButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff0000;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.loaderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    width: 100%;
+    color: #666;
+    font-family: inherit;
+    gap: 8px;
+}
+
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-top: 2px solid #333;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Dark mode override */
+:global(.dark-theme) .loaderContainer {
+    color: #aaa;
+}
+
+:global(.dark-theme) .loader {
+    border-color: #555;
+    border-top-color: #fff;
+}
