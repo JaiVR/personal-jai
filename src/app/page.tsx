@@ -8,6 +8,7 @@ export default function Home() {
       <p><small>trying to build something meaningful, vibe coding just removed that friction, if you need it, you can build it.</small></p>
       {/* <p><small>to reset: 🏎️♟️🏸🏀📚🎧🎬🎮</small></p> */}
 
+      <p><small>email me at <Link href='mailto:f20221264@pilani.bits-pilani.ac.in'>f20221264@pilani.bits-pilani.ac.in</Link></small></p>
       <div className={styles.socialLinks}>
         <p><small>
           <Link href="https://twitter.com/Destryet" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
